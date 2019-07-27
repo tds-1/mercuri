@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Home | NIL-SL</title>
+   <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+ 	
+    
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,700,500' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  <link rel="stylesheet"  href="{{url_for('static',filename='../static_dir/css/style.css') }}">
+
+  <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+
+  <script type="text/javascript" src="{{url_for('static',filename='../static_dir/js/lib/jquery-2.1.4.min.js') }}"></script>
+
+
+</head>
+
+
+
+<body >
+
+<nav class="navbar navbar-inverse">
+  <div class="container">
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <a class="navbar-brand" href="/course/{{name}}">Snow/TDS</a>
+      <ul class="nav navbar-nav navbar-right">
+        <li ><a href="/entry">Home</a></li>
+        <li><a href="">About</a></li>
+        <li><a href="">Contact</a></li>
+        
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+
+<div class="container">
+	<h1>Preview Course <span class="cname">{{name | replace('-',' ')}}</span></h1>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p>
+    <img src="{{url_for('static',filename='../static_dir/img.png') }}" alt="Italian Trulli" style="width:1200px;height:800px;"></p>
+  </div>
+
+</div>
+
+
+<div id="box">
+  <h2 id="title"><span>Title : </span>{{title}}</h2><br>
+  <h2 id="question"><span>Question : </span>{{problem}} </h2><br><br>
+  <ul id="topiclist">
+      <li name="mcq" value="A" id="{{title}}"><span><i class="fa fa-check-square" style=" vertical-align: middle;"></i></span>A. {{ca}}</li>
+      <li name="mcq" value="B" id="{{title}}"><span><i class="fa fa-check-square" style=" vertical-align: middle;"></i></span>B. {{cw1}}</li>
+      <li name="mcq" value="C" id="{{title}}"><span><i class="fa fa-check-square" style=" vertical-align: middle;"></i></span>C. {{cw2}}</li>
+      <li name="mcq" value="D" id="{{title}}"><span><i class="fa fa-check-square" style=" vertical-align: middle;"></i></span>D. {{cw3}}</li>
+      
+
+  </ul>
+
+
+  <div class="box formul">
+    
+    <!-- /*<h3 class="exp">EXPLANATION: */ -->
+<!--      /*<br><br>{{explanation}}</h3>*/
+    
+    /*<br><br>*/
+
+ -->    <form action="/course/{{name}}/preview-course" method="POST">
+      <button class ="btn btn-primary next">NEXT</button>
+    </form>
+  </div>
+
+</div>
+
+
+
+
+
+
+<!-- <script type="text/javascript" src="../static_dir/js/todos.js"></script> -->
+<script type="text/javascript" src="{{url_for('static',filename='../static_dir/js/preview.js') }}"></script>
+</body>
+</html>

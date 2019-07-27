@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Problem</title>
+    
+      
+      <link href='https://fonts.googleapis.com/css?family=Roboto:400,700,500' rel='stylesheet' type='text/css'>
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	  <link rel="stylesheet" type="text/css" href="../static_dir/css/question_display.css">
+
+	  <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+
+	  <script type="text/javascript" src="../static_dir/js/lib/jquery-2.1.4.min.js"></script>            
+ 
+   </head>
+
+
+<body >
+
+<nav class="navbar navbar-inverse">
+  <div class="container">
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <a class="navbar-brand" href="/course/{{name}}">Snow/TDS</a>
+      <ul class="nav navbar-nav navbar-right">
+        <li ><a href="/entry">Home</a></li>
+        <li><a href="">About</a></li>
+        <li><a href="">Contact</a></li>
+        
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+
+
+<div id="box">
+  <h2 id="title"><span>Title : </span>{{title}}</h2><br>
+  <h2 id="question"><span>Question : </span>{{problem}} </h2><br><br>
+  <ul id="topiclist">
+      <li name="mcq" value="A" id="{{title}}"><span><i class="fa fa-check-square" style=" vertical-align: middle;"></i></span>{{ca}}</li>
+      <li name="mcq" value="B" id="{{title}}"><span><i class="fa fa-check-square" style=" vertical-align: middle;"></i></span>{{cw1}}</li>
+      <li name="mcq" value="C" id="{{title}}"><span><i class="fa fa-check-square" style=" vertical-align: middle;"></i></span>{{cw2}}</li>
+      <li name="mcq" value="D" id="{{title}}"><span><i class="fa fa-check-square" style=" vertical-align: middle;"></i></span>{{cw3}}</li>
+
+  </ul>
+  <br><br>
+  <div class="box exp">
+    <h3 id="right"><strong>Correct Answer: <strong></h3>
+    <h3>Explanation:<br>Since A is the correct answer hence your answer is wrong</h3>
+  </div>
+
+ </div>
+
+
+</body>
+</html>

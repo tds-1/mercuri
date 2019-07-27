@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>{{ cn | replace('-',' ')}} Course | NIL-SL</title>
+  <!--   <link rel="stylesheet"  href="{{url_for('static',filename='../static_dir/css/DBMS.css') }}"> -->
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,700,500' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="../static_dir/css/course.css">
+    
+  <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+
+  <script type="text/javascript" src="../static_dir/js/lib/jquery-2.1.4.min.js"></script>
+  <!-- <script type="text/javascript" src="{{url_for('static',filename='../static_dir/js/lib/jquery-2.1.4.min.js') }}"></script> -->
+
+</head>
+<body>
+
+<body>
+<nav class="navbar navbar-inverse">
+  <div class="container">
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <a class="navbar-brand" href="/entry">Snow/TDS</a>
+      <ul class="nav navbar-nav navbar-right">
+        <li ><a href="/entry">Home</a></li>
+        <li><a href="">About</a></li>
+        <li><a href="">Contact</a></li>
+        
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+
+
+<div class="container">
+  <h1 >Welcome to {{ cn | replace('-',' ')}} Course</h1>
+</div>
+
+
+
+<div class="container">
+  <a  class ="main_item" href="{{cn}}/preview-course"><h1>Preview Course</h1></a>
+  <a  class ="main_item" href="set-dependencies/{{cn}}"><h1>Set Dependencies</h1></a>
+</div>
+<br>
+
+
+<!-- list of questions -->
+
+<div id="box">
+    <h1>List of Questions:</h1>
+    <h2>Beginner Level</h2>
+    <ul id="topiclist">
+      {% for key in msg1 %}
+        <li name="{{key}}" value="{{cn}}"><span><i class="fa fa-trash" style=" vertical-align: middle;"></i></span><a  class ="main_item" href="/problem/{{ key |replace(' ', '-') }}">{{ key }}</a></li>
+      {% endfor %}
+    </ul>
+</div>
+
+<div id="img">
+  <h4>Explanation-></h4>
+  <form action="/course/three-tier" method="POST">
+    <input type="file" name="pic1" accept="image/*" style="
+    height: 50px;
+    font-size: inherit;
+">
+    <input type="submit" style="background: aquamarine;color: black;font-weight: bold;height: 40px;font-size: medium;">
+  </form>
+</div>
+
+<div id="box">
+  <h2>Medium Level</h2>
+    <ul id="topiclist">
+      {% for key in msg2 %}
+        <li name="{{key}}" value="{{cn}}"><span><i class="fa fa-trash" style=" vertical-align: middle;"></i></span><a  class ="main_item" href="/problem/{{ key |replace(' ', '-') }}">{{ key }}</a></li>
+      {% endfor %}
+    </ul>
+</div>
+
+<div id="img">
+  <h4>Explanation-></h4>
+  <form action="/course/three-tier" method="POST">
+    <input type="file" name="pic2" accept="image/*" style="height: 50px;
+    font-size: inherit;
+">
+    <input type="submit" style="background: aquamarine;color: black;font-weight: bold;height: 40px;font-size: medium;">
+  </form>
+</div>
+<div id="box">
+    <h2>Expert Level</h2>
+    <ul id="topiclist">
+      {% for key in msg3 %}
+        <li name="{{key}}" value="{{cn}}"><span><i class="fa fa-trash" style=" vertical-align: middle;"></i></span><a  class ="main_item" href="/problem/{{ key |replace(' ', '-') }}">{{ key }}</a></li>
+      {% endfor %}
+    </ul>
+</div>
+
+<div id="img">
+  <h4>Explanation-></h4>
+  <form action="/course/three-tier" method="POST">
+    <input type="file" name="pic3" accept="image/*" style="
+    height: 50px;
+    font-size: inherit;
+">
+    <input type="submit" style="background: aquamarine;color: black;font-weight: bold;height: 40px;font-size: medium;">
+  </form>
+</div>
+
+<!-- DROPDOWN -->
+<div class="container">
+  <button class="btn btn-primary dropbtn1">Add Level-1 Question</button>
+</div>
+<div class="container">
+  <div class="dropdown1">
+      
+    <div id="formul1"> 
+      <form action="/course/{{cn}}" method="POST" id="Question">
+       
+        <div class="form-group">
+          <label>Title</label>
+          <input type="text" class="form-control" name="title1" placeholder="Type Title Here" required>
+        </div>
+      
+        <div class="form-group">
+          <label>Problem Statement</label>
+          <!-- <input type="text" class="form-control" id="canswer" placeholder="Type Correct Answer Here"> -->
+          <textarea rows="10" class="form-control" name ="problem1" placeholder="Type Problem Here"  required></textarea>
+        </div>
+        
+        <div class="form-group">
+          <label>Option-A</label>
+          <input type="text" class="form-control" name="opt11" placeholder="Type Option-A Here"  required>
+        </div>
+
+        <div class="form-group">
+          <label>Option-B</label>
+          <input type="text" class="form-control" name="opt21" placeholder="Type Option-B Here"  required>
+        </div>
+
+        <div class="form-group">
+          <label>Option-C</label>
+          <input type="text" class="form-control" name="opt31" placeholder="Type Option-C Here"  required>
+        </div>
+
+        <div class="form-group">
+          <label>Option-D</label>
+          <input type="text" class="form-control" name="opt41" placeholder="Type Option-D Here"  required>
+        </div>
+        <div class="opt">
+          <label>Correct answer  :</label>
+          <select name="option1" placeholder="A">
+            <option value="A" autofocus>A</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+            <option value="D">D</option>
+          </select>
+        </div>
+        <br>
+    <!--     <div class="form-group">
+          <label>Explanation</label>
+            <textarea rows="4" class="form-control" name ="explain1" placeholder="Type Problem Here"></textarea>
+         </div>
+        <br>
+     -->    <button class="btn btn-primary dropbtn">Submit Question</button>
+      </form>
+    </div>
+      
+  </div>  
+</div>
+</br>
+<!-- DROPDOWN -->
+<div class="container">
+  <button class="btn btn-primary dropbtn2">Add Level-2 Question</button>
+</div>
+<div class="container">
+  <div class="dropdown2">
+      
+    <div id="formul2"> 
+      <form action="/course/{{cn}}" method="POST" id="Question">
+       
+        <div class="form-group">
+          <label>Title</label>
+          <input type="text" class="form-control" name="title2" placeholder="Type Title Here" required>
+        </div>
+      
+        <div class="form-group">
+          <label>Problem Statement</label>
+          <!-- <input type="text" class="form-control" id="canswer" placeholder="Type Correct Answer Here"> -->
+          <textarea rows="10" class="form-control" name ="problem2" placeholder="Type Problem Here"  required></textarea>
+        </div>
+        
+        <div class="form-group">
+          <label>Option-A</label>
+          <input type="text" class="form-control" name="opt12" placeholder="Type Option-A Here"  required>
+        </div>
+
+        <div class="form-group">
+          <label>Option-B</label>
+          <input type="text" class="form-control" name="opt22" placeholder="Type Option-B Here"  required>
+        </div>
+
+        <div class="form-group">
+          <label>Option-C</label>
+          <input type="text" class="form-control" name="opt32" placeholder="Type Option-C Here"  required>
+        </div>
+
+        <div class="form-group">
+          <label>Option-D</label>
+          <input type="text" class="form-control" name="opt42" placeholder="Type Option-D Here"  required>
+        </div>
+        <div class="opt">
+          <label>Correct answer  :</label>
+          <select name="option2" placeholder="A">
+            <option value="A" autofocus>A</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+            <option value="D">D</option>
+          </select>
+        </div>
+        <br>
+    <!--     <div class="form-group">
+          <label>Explanation</label>
+            <textarea rows="4" class="form-control" name ="explain2" placeholder="Type Problem Here"></textarea>
+         </div>
+        <br>
+     -->    <button class="btn btn-primary dropbtn">Submit Question</button>
+      </form>
+    </div>
+      
+  </div>  
+</div>
+</br>
+<!-- DROPDOWN -->
+<div class="container">
+  <button class="btn btn-primary dropbtn3">Add Level-3 Question</button>
+</div>
+<div class="container">
+  <div class="dropdown3">
+      
+    <div id="formul3"> 
+      <form action="/course/{{cn}}" method="POST" id="Question">
+       
+        <div class="form-group">
+          <label>Title</label>
+          <input type="text" class="form-control" name="title3" placeholder="Type Title Here" required>
+        </div>
+      
+        <div class="form-group">
+          <label>Problem Statement</label>
+          <!-- <input type="text" class="form-control" id="canswer" placeholder="Type Correct Answer Here"> -->
+          <textarea rows="10" class="form-control" name ="problem3" placeholder="Type Problem Here"  required></textarea>
+        </div>
+        
+        <div class="form-group">
+          <label>Option-A</label>
+          <input type="text" class="form-control" name="opt13" placeholder="Type Option-A Here"  required>
+        </div>
+
+        <div class="form-group">
+          <label>Option-B</label>
+          <input type="text" class="form-control" name="opt23" placeholder="Type Option-B Here"  required>
+        </div>
+
+        <div class="form-group">
+          <label>Option-C</label>
+          <input type="text" class="form-control" name="opt33" placeholder="Type Option-C Here"  required>
+        </div>
+
+        <div class="form-group">
+          <label>Option-D</label>
+          <input type="text" class="form-control" name="opt43" placeholder="Type Option-D Here"  required>
+        </div>
+        <div class="opt">
+          <label>Correct answer  :</label>
+          <select name="option3" placeholder="A">
+            <option value="A" autofocus>A</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+            <option value="D">D</option>
+          </select>
+        </div>
+        <br>
+    <!--     <div class="form-group">
+          <label>Explanation</label>
+            <textarea rows="4" class="form-control" name ="explain3" placeholder="Type Problem Here"></textarea>
+         </div>
+     -->    <br>
+        <button class="btn btn-primary dropbtn">Submit Question</button>
+      </form>
+    </div>
+      
+  </div>  
+</div>
+</br>
+<div class="container">
+  
+</div>
+<script type="text/javascript" src="../static_dir/js/course.js"></script>
+<!-- <script type="text/javascript" src="{{url_for('static',filename='static_dir/js/DBMS.js') }}"></script> -->
+</body>
+</html>

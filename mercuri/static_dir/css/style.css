@@ -1,0 +1,183 @@
+body {font-family: Arial, Helvetica, sans-serif;}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+body{
+    background: url("./pat.jpg");
+    /*background-size: contain;*/
+    /*background-position: top center;*/
+    background-repeat: 10;
+    font-family: Roboto;
+    color : white;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 24px;
+}
+
+h1{
+    text-align: center;
+    font-size: 35px;
+}
+
+.cname {
+    color: #FFDEAD;
+}
+
+h2 {
+    /*background: #2980b9;*/
+    /*background: #f99922;*/
+
+    color: white;
+    margin: 0;
+    padding: 10px 0px;
+    /*text-transform: uppercase;*/
+    font-size: 30px;
+    /*font-weight: bold;*/
+    text-align: justify;
+}
+
+h2:hover {
+    color: #FFDEAD;
+}
+
+span {
+    text-align: center;
+}
+
+span:hover {
+    cursor: pointer;
+}
+
+li span {
+    background: #f99922;
+    height: 30px;
+    margin-right: 20px;
+    text-align: center;
+    color: white;
+    width: 0;
+    display: inline-block;
+    transition: 0.2s linear;
+    opacity: 0;
+}
+
+#box ul li:hover {
+    background: #f99922;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+li:hover span {
+    width: 40px;
+    opacity: 1.0;
+}
+
+#box {
+    width: 1000px;
+    margin-top: 50px;
+    margin-left: 200px;
+    box-shadow: 0 0 3px rgba(0,0,0, 0.1);
+}
+
+#topiclist {
+    margin-top: 10px;
+    margin-left: 20px;
+    box-shadow: 0 0 3px rgba(0,0,0, 0.1);
+    text-align: justify;
+}
+
+.main_item {
+    color: white;
+    font-size: x-large;
+    /*font-weight: bold;*/
+}
+
+
+.formul {
+    color: white;
+    display: none;
+    padding-top: 50px;
+    padding-bottom: 30px
+}
+
+
+.exp {
+    background: #f99922;
+    color: black;
+    font-weight: bold;
+}
+
+#title span {
+    color:#808080;
+    cursor: default;
+}
+
+#question span {
+    color:#A9A9A9;
+    cursor: default;
+}
+
+/*
+.exp:hover {
+    color: #FFDEAD;
+    background-color: #008000;
+}*/
+
+button{
+    align-items: center;
+    color: #8B0000;
+    background-color: #008000;
+    font-weight: bolder;
+}
+
+
+.correct {
+    background-color: #008000;
+    color: white;
+}
+
+.incorrect {
+    background-color: #8B0000;
+    color: white;
+}
