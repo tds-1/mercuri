@@ -581,7 +581,7 @@ def prev_pos(variable):
 				con.close()
 			
 	print ("CID--> ",cid)
-
+	print (im)
 	return render_template("preview.html",name=variable,title=cid[1],problem=cid[2], ca=cid[3], cw1=cid[4], cw2=cid[5], cw3=cid[6], img=im)
 
 @app.route("/course/set-dependencies/<variable>", methods=["GET"])
